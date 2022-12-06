@@ -1,51 +1,43 @@
 package org.example;
 
 public class Personnage {
+    public int pointsAttribuer;
     String nom;
-    String genre;
-    String race;
-    String famille;
-    String titre ;
+    String sexe;
+    int Age;
+    int taille;
+    int PV = 100;
+    int Moral = 100;
+    int Niveau = 1;
 
-    @Override
-    public String toString() {
-        return "Personnage{" +
-                "Nom='" + nom + '\'' +
-                ", Genre='" + genre + '\'' +
-                ", Race='" + race + '\'' +
-                ", Famille='" + famille + '\'' +
-                '}';
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
+    public Personnage(String nom, String sexe, int age, int taille, int PV, int moral, int niveau) {
         this.nom = nom;
+        this.sexe = sexe;
+        Age = age;
+        this.taille = taille;
+        this.PV = PV;
+        Moral = moral;
+        Niveau = niveau;
+    }
+    int force = 1;
+    int agilite = 1;
+    int chance = 1;
+    int endurance = 1;
+
+
+    public void attaquer ()
+    {
+
     }
 
-    public String getGenre() {
-        return genre;
+    public void seSoigner ()
+    {
+        if (PV < 100)
+            while (PV <100)
+                PV ++;
+        else
+            System.out.println("Ta barre de santé est déja au max !");
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
 
-    public String getRace() {
-        return race;
-    }
-
-    public void setRace(String race) {
-        race = race;
-    }
-
-    public String getFamille() {
-        return famille;
-    }
-
-    public void setFamille(String famille) {
-        this.famille = famille;
-    }
 }
