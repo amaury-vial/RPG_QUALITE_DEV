@@ -6,41 +6,94 @@ abstract public class Personnage {
     String sexe;
     int Age;
     int taille;
-    int PV = 100;
-    int Moral = 100;
-    int Niveau = 1;
+    int PV;
 
-    public Personnage(String nom, String sexe, int age, int taille, int PV, int moral, int niveau) {
+    public Personnage(String nom, String sexe, int age, int taille, String classe) {
         this.nom = nom;
         this.sexe = sexe;
         Age = age;
         this.taille = taille;
+        this.PV = 100;
+        Moral = 100;
+        Niveau = 1;
+        this.vitesse = 1;
+        this.force = 1;
+        this.chance = 1;
+        this.agilite = 1;
+        this.classe = classe;
+    }
+
+    protected int Moral;
+    protected int Niveau;
+    protected int vitesse;
+    protected int force;
+    protected int chance;
+    protected int agilite;
+    String classe;
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
+    public void setAge(int age) {
+        Age = age;
+    }
+
+    public void setTaille(int taille) {
+        this.taille = taille;
+    }
+
+    public void setPV(int PV) {
         this.PV = PV;
+    }
+
+    public void setMoral(int moral) {
         Moral = moral;
+    }
+
+    public void setNiveau(int niveau) {
         Niveau = niveau;
     }
-    int force = 1;
-    int agilite = 1;
-    int chance = 1;
-    int endurance = 1;
 
-
-    public void attaquer ()
-    {
-
+    public void setVitesse(int vitesse) {
+        this.vitesse = vitesse;
     }
 
-    public void seSoigner ()
-    {
-        if (PV < 100)
-            while (PV <100)
-                PV ++;
-        else
-            System.out.println("Ta barre de santé est déja au max !");
+    public void setForce(int force) {
+        this.force = force;
     }
 
+    public void setChance(int chance) {
+        this.chance = chance;
+    }
 
-    abstract public void attaqueSpé ();
+    public void setAgilite(int agilite) {
+        this.agilite = agilite;
+    }
 
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
 
+    @Override
+    public String toString() {
+        return "Personnage{" +
+                "nom='" + nom + '\'' +
+                ", sexe='" + sexe + '\'' +
+                ", Age=" + Age +
+                ", taille=" + taille +
+                ", PV=" + PV +
+                ", Moral=" + Moral +
+                ", Niveau=" + Niveau +
+                ", vitesse=" + vitesse +
+                ", force=" + force +
+                ", chance=" + chance +
+                ", agilité=" + agilite +
+                ", classe='" + classe + '\'' +
+                '}';
+    }
 }

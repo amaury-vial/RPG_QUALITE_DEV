@@ -1,17 +1,13 @@
 package org.example;
 
-public class Guerrier extends Joueur implements Marcher{
-    public Guerrier(String nom, String sexe, int age, int taille, int PV, int moral, int niveau) {
-        super(nom, sexe, age, taille, PV, moral, niveau);
+public class Guerrier extends Joueur implements Marcher, Metier{
+
+    public Guerrier(String nom, String sexe, int age, int taille, String classe) {
+        super(nom, sexe, age, taille, classe);
     }
 
     @Override
-    public void attaqueSpé() {
-        System.out.println("Attaque spéciale ");
+    public void appliquerStatsSpecifiques() {
+
     }
-
-
-
-
-
 }

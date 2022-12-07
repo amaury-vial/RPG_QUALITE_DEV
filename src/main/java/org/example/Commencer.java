@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Commencer {
 
-    public static void creationJoueur (String Test)
+    public static void creationJoueur ()
     {
         System.out.println("Bonjour cher joueur !");
         System.out.println("Vous allez créer votre personnage");
@@ -24,10 +24,30 @@ public class Commencer {
         String sexe = sc1.nextLine();
         System.out.println("On est presque bon. Quelle est ta taille ? (en cm)");
         int taille = sc.nextInt();
-        System.out.println("Pour finir, quelle classe veux tu choisir ?");
+        System.out.println("Pour finir, quelle classe veux tu choisir ? Guerrier , Magicien , Rodeur , Voleur");
+        String classe = sc.nextLine();
         System.out.println("Ok tout est bon pour nous");
         System.out.println("Place à l'attribution des points");
-        Joueur test = new Joueur(Test , sexe , age , taille , 100 , 100 , 1);
+
+        Joueur test = new Joueur(nom , sexe , age , taille , classe);
+
+        while (test.pointsRestantsAAtribuer()) {
+            System.out.println("Ou mettre tes points ? 1 pour agilité  , 2 pour chance , 3 pour force");
+            int statChoisi = sc.nextInt();
+
+
+            switch (statChoisi) {
+                case 1:
+                    test.ajouterAgilite();
+                    break;
+                case 2:
+                    test.ajouterChance();
+                    break;
+                case 3:
+                    test.ajouterForce();
+
+            }
+        }
     }
 
 
