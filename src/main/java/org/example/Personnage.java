@@ -1,7 +1,7 @@
 package org.example;
 
-public class Personnage {
-    public int pointsAttribuer;
+abstract public class Personnage {
+
     String nom;
     String sexe;
     int Age;
@@ -38,6 +38,9 @@ public class Personnage {
         else
             System.out.println("Ta barre de santé est déja au max !");
     }
+
+
+    abstract public void attaqueSpé ();
 
 
 }

@@ -1,11 +1,49 @@
 package org.example;
 
-public class Joueur extends Personnage{
+public class Joueur extends Personnage {
+
     public Joueur(String nom, String sexe, int age, int taille, int PV, int moral, int niveau) {
         super(nom, sexe, age, taille, PV, moral, niveau);
     }
 
+    @Override
+    public void attaqueSpé() {
 
+    }
+
+    public int pointsAttribuer = 20;
+
+    public int getPointsAttribuer() {
+        return pointsAttribuer;
+    }
+
+    public void setPointsAttribuer(int pointsAttribuer) {
+        this.pointsAttribuer = pointsAttribuer;
+    }
+
+    String classe;
+
+    public Joueur(String nom, String sexe, int age, int taille, int PV, int moral, int niveau, int pointsAttribuer, String classe, int force, int agilite, int chance, int vitesse) {
+        super(nom, sexe, age, taille, PV, moral, niveau);
+        this.pointsAttribuer = pointsAttribuer;
+        this.classe = classe;
+        this.force = force;
+        this.agilite = agilite;
+        this.chance = chance;
+        this.vitesse = vitesse;
+    }
+
+    int force;
+    int agilite;
+    int chance;
+
+    public String getClasse() {
+        return classe;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
 
     public int getForce() {
         return force;
@@ -31,16 +69,17 @@ public class Joueur extends Personnage{
         this.chance = chance;
     }
 
-    public int getEndurance() {
-        return endurance;
+    public int getVitesse() {
+        return vitesse;
     }
 
-    public void setEndurance(int endurance) {
-        this.endurance = endurance;
+    public void setVitesse(int vitesse) {
+        this.vitesse = vitesse;
     }
-    int force = 1;
-    int agilite = 1;
-    int chance = 1;
-    int endurance = 1;
+
+    int vitesse;
+
+
+
 
 }

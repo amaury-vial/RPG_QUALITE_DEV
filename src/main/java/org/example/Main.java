@@ -5,7 +5,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("Cration de la partie. Quel est ton nom ? ");
 
+
+        Commencer.creationJoueur();
 
         while (test.pointsAttribuer != 0)
         {
