@@ -3,12 +3,12 @@ package org.example;
 abstract public class Personnage {
 
     String nom;
-    String sexe;
+    char sexe;
     int Age;
     int taille;
     int PV;
 
-    public Personnage(String nom, String sexe, int age, int taille, String classe) {
+    public Personnage(String nom, char sexe, int age, int taille, char classe) {
         this.nom = nom;
         this.sexe = sexe;
         Age = age;
@@ -29,13 +29,13 @@ abstract public class Personnage {
     protected int force;
     protected int chance;
     protected int agilite;
-    String classe;
+    char classe;
 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public void setSexe(String sexe) {
+    public void setSexe(char sexe) {
         this.sexe = sexe;
     }
 
@@ -75,7 +75,7 @@ abstract public class Personnage {
         this.agilite = agilite;
     }
 
-    public void setClasse(String classe) {
+    public void setClasse(char classe) {
         this.classe = classe;
     }
 

@@ -2,12 +2,13 @@ package org.example;
 
 public class Joueur extends Personnage {
 
+    int pointsAAttribuer = 20;
+    public Joueur(String nom, char sexe, int age, int taille,  char classe) {
+        super(nom,sexe,age,taille,classe);
 
-    public Joueur(String nom, String sexe, int age, int taille,  String classe) {
-        super(nom, sexe, age, taille, classe);
     }
 
-   private int pointsAAttribuer = 20;
+
 
     public void ajouterAgilite() {
         setAgilite(agilite + 5);

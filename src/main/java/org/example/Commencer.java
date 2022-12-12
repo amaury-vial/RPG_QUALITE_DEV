@@ -20,16 +20,14 @@ public class Commencer {
                  age = sc.nextInt();
 
         }
-        System.out.println("De quel sexe es-tu ? H pour Homme et F pour Femme");
+        System.out.println("De quel sexe es-tu ? H pour Homme et F pour Femme (n'oublie pas la majuscule)");
         Scanner sc1 = new Scanner(System.in);
-
-        String sexe = sc1.nextLine();
-        do
+        char sexe = sc1.next().charAt(0);
+        while (sexe !='H' && sexe !='F')
         {
-            System.out.println("Soit H soit F !");
-            sexe = sc1.nextLine();
+            System.out.println("Soit H soit F");
+            sexe = sc1.next().charAt(0);
         }
-            while (sexe != "H"  || sexe !="F");
 
         System.out.println("On est presque bon. Quelle est ta taille ? (en cm)");
         int taille = sc.nextInt();
@@ -37,22 +35,41 @@ public class Commencer {
             System.out.println("Ok le nain");
         else if (taille > 190)
             System.out.println("Tu as déja songé au basket ?");
-        System.out.println("Pour finir, quelle classe veux tu choisir ? G pour Guerrier , M pour Magicien , R pour Rodeur et V pour  Voleur");
-        String classe = sc.nextLine();
-        while (classe !="G" || classe !="M" || classe !="R" || classe!="V" )
+        System.out.println("Pour finir, quelle classe veux tu choisir ? G pour Guerrier , M pour Magicien , R pour Rodeur et V pour  Voleur (n'oublie pas la majuscule)");
+
+        char classe = sc.next().charAt(0);
+        while (classe != 'G' && classe != 'M' && classe != 'R' && classe != 'V')
         {
             System.out.println("Veuillez choisir une classe proposée!");
-            classe = sc.nextLine();
+            classe = sc.next().charAt(0);
+        }
+        Joueur test;
+        switch (classe) {
+            case 'G' :
+                 test = new Guerrier(nom , sexe , age , taille , classe);
+                 break;
+            case 'M' :
+                test = new Magicien(nom , sexe , age , taille , classe);
+                break;
+
+            case 'R' :
+                test = new Rôdeurs(nom , sexe , age , taille , classe);
+                break;
+
+
+
+            default:
+                test = new Voleurs(nom , sexe , age , taille , classe);
         }
         System.out.println("Ok tout est bon pour nous");
         System.out.println("Place à l'attribution des points");
         System.out.println("Lorsque tu choisiras ou mettre tes points , 5 points seront attribués");
 
-        Joueur test = new Joueur(nom , sexe , age , taille , classe);
+
 
         while (test.pointsRestantsAAtribuer()) {
             System.out.println("Ou mettre tes points ? 1 pour agilité  , 2 pour chance , 3 pour force");
-            System.out.println("Il te reste 0 " +test.pointsRestantsAAtribuer());
+            System.out.println("Il te reste  " +test.pointsAAttribuer+" points");
             int statChoisi = sc.nextInt();
 
 
@@ -68,6 +85,11 @@ public class Commencer {
 
             }
         }
+
+        System.out.println("Voici tes stats");
+        System.out.println("Agilité " +test.agilite);
+        System.out.println("Force " +test.force);
+        System.out.println("Chance " +test.chance);
     }
 
 
