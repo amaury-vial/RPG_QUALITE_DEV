@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Commencer {
 
-    public static void creationJoueur ()
+    public static Joueur creationJoueur ()
     {
         System.out.println("Bonjour cher joueur !");
         System.out.println("Vous allez créer votre personnage");
@@ -90,6 +90,8 @@ public class Commencer {
         System.out.println("Agilité " +test.agilite);
         System.out.println("Force " +test.force);
         System.out.println("Chance " +test.chance);
+
+        return test;
     }
 
 
