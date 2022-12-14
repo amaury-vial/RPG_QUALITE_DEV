@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class Commencer {
 
-    public static Joueur creationJoueur ()
+    public static void creationJoueur (Joueur Perso )
     {
         System.out.println("Bonjour cher joueur !");
         System.out.println("Vous allez créer votre personnage");
         System.out.println("Quel est votre nom ?");
         Scanner sc = new Scanner(System.in);
         Scanner points = new Scanner(System.in);
-        String nom = sc.nextLine();
-        System.out.println("Très bien " + nom + ". C'est un très beau nom . Quel est votre age ?");
+        String prenom = sc.nextLine();
+        System.out.println("Très bien " + prenom + ". C'est un très beau nom . Quel est votre age ?");
         int age = sc.nextInt();
         while (age < 13)
         {
-                System.out.println("Tu es trop jeune pour ce jeu");
-                 age = sc.nextInt();
+            System.out.println("Tu es trop jeune pour ce jeu");
+            age = sc.nextInt();
 
         }
         System.out.println("De quel sexe es-tu ? H pour Homme et F pour Femme (n'oublie pas la majuscule)");
@@ -43,23 +43,22 @@ public class Commencer {
             System.out.println("Veuillez choisir une classe proposée!");
             classe = sc.next().charAt(0);
         }
-        Joueur test;
         switch (classe) {
             case 'G' :
-                 test = new Guerrier(nom , sexe , age , taille , classe);
-                 break;
+                Perso = new Guerrier(prenom , sexe , age , taille , classe);
+                break;
             case 'M' :
-                test = new Magicien(nom , sexe , age , taille , classe);
+                Perso = new Magicien(prenom , sexe , age , taille , classe);
                 break;
 
             case 'R' :
-                test = new Rôdeurs(nom , sexe , age , taille , classe);
+                Perso = new Rôdeurs(prenom , sexe , age , taille , classe);
                 break;
 
 
 
             default:
-                test = new Voleurs(nom , sexe , age , taille , classe);
+                Perso = new Voleurs(prenom , sexe , age , taille , classe);
         }
         System.out.println("Ok tout est bon pour nous");
         System.out.println("Place à l'attribution des points");
@@ -67,32 +66,37 @@ public class Commencer {
 
 
 
-        while (test.pointsRestantsAAtribuer()) {
+        while (Perso.pointsRestantsAAtribuer()) {
             System.out.println("Ou mettre tes points ? 1 pour agilité  , 2 pour chance , 3 pour force");
-            System.out.println("Il te reste  " +test.pointsAAttribuer+" points");
+            System.out.println("Il te reste  " +Perso.pointsAAttribuer+" points");
             int statChoisi = sc.nextInt();
 
 
             switch (statChoisi) {
                 case 1:
-                    test.ajouterAgilite();
+                    Perso.ajouterAgilite();
                     break;
                 case 2:
-                    test.ajouterChance();
+                    Perso.ajouterChance();
                     break;
                 case 3:
-                    test.ajouterForce();
+                    Perso.ajouterForce();
 
             }
         }
 
         System.out.println("Voici tes stats");
-        System.out.println("Agilité " +test.agilite);
-        System.out.println("Force " +test.force);
-        System.out.println("Chance " +test.chance);
+        System.out.println("Agilité " +Perso.agilite);
+        System.out.println("Force " +Perso.force);
+        System.out.println("Chance " +Perso.chance);
+        System.out.println("");
+        System.out.println("Félicitation tu as crée ton personnage");
+        System.out.println("Place au jeu !");
+        System.out.println(Perso.nom);
 
-        return test;
     }
+
+
 
 
 }

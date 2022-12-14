@@ -24,10 +24,10 @@ abstract public class Personnage {
 
     protected int Moral;
     protected int Niveau;
-    protected int vitesse;
-    protected int force;
-    protected int chance;
-    protected int agilite;
+    protected float vitesse;
+    protected float force;
+    protected float chance;
+    protected float agilite;
     char classe;
 
     public void setNom(String nom) {
@@ -58,19 +58,19 @@ abstract public class Personnage {
         Niveau = niveau;
     }
 
-    public void setVitesse(int vitesse) {
+    public void setVitesse(float vitesse) {
         this.vitesse = vitesse;
     }
 
-    public void setForce(int force) {
+    public void setForce(float force) {
         this.force = force;
     }
 
-    public void setChance(int chance) {
+    public void setChance(float chance) {
         this.chance = chance;
     }
 
-    public void setAgilite(int agilite) {
+    public void setAgilite(float agilite) {
         this.agilite = agilite;
     }
 

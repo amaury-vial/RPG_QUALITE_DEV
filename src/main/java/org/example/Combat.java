@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Combat {
 
-    public void attaquer (Joueur test , Adversaire mechant)
+    public static void attaquer (Joueur test , Adversaire  mechant)
     {
         int compteur = 0;
         while (test.PV != 0 && mechant.PV !=0)
@@ -59,7 +59,7 @@ public class Combat {
                         mechant.PV = mechant.PV - 5;
                     }
                 }
-            else
+                else
                 {
                     System.out.println("C'est au tour de l'adervsaire d'attaquer");
                     test.PV -= test.PV;
@@ -68,12 +68,13 @@ public class Combat {
 
             }
         }
+
     }
 
     public void utiliseObjet (Joueur test)
     {
         if(test.PV != 95)
-        test.PV = test.PV +5;
+            test.PV = test.PV +5;
     }
 
 

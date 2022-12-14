@@ -1,6 +1,6 @@
 package org.example;
 
-public class Joueur extends Personnage {
+public  class Joueur extends Personnage {
 
     int pointsAAttribuer = 20;
     public Joueur(String nom, char sexe, int age, int taille,  char classe) {
@@ -10,7 +10,7 @@ public class Joueur extends Personnage {
 
 
 
-    public void ajouterAgilite() {
+     public void ajouterAgilite() {
         setAgilite(agilite + 5);
         pointsAAttribuer -= 5;
     }
