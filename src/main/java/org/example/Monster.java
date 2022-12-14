@@ -4,8 +4,6 @@ import java.util.*;
 //Classe pour gérer un monstre
 public class Monster {
     private String name;
-
-
     private int health;
     private int attack;
     private int defense;

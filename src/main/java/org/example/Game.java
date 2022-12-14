@@ -3,20 +3,20 @@ import java.util.*;
 
 //Classe pour gérer le jeu
 public class Game {
-    private Player player;
-    private List<Monster> monsters;
+    private Joueur joueur;
+    private List<Adversaire> adversaires;
 
-    public Game(Player player){
-        this.player = player;
-        this.monsters = new ArrayList<>();
+    public Game(Joueur joueur){
+        this.joueur = joueur;
+        this.adversaires = new ArrayList<>();
     }
 
-    public void addMonster(Monster monster){
-        this.monsters.add(monster);
+    public void addMonster(Adversaire adversaire){
+        this.adversaires.add(adversaire);
     }
 
     public void start(){
-        System.out.println("Bienvenue dans mon jeu RPG!");
+        System.out.println("Bienvenue dans L'Âme des Ténèbres!");
         while(true){
             System.out.println("Veuillez choisir une action:");
             System.out.println("1. Explorer");
@@ -37,13 +37,13 @@ public class Game {
     }
 
     public void explore(){
-        if(this.monsters.isEmpty()){
+        if(this.adversaires.isEmpty()){
             System.out.println("Il n'y a pas de monstres dans les environs!");
             return;
         }
 
-        Monster monster = this.monsters.get(0);
-        System.out.println("Vous êtes tombé sur un " + monster.getName() + "!");
+        Adversaire adversaire = this.adversaires.get(0);
+        System.out.println("Vous êtes tombé sur un " + adversaire.getNom() + "!");
         while(true){
             System.out.println("Veuillez choisir une action:");
             System.out.println("1. Attaquer");
@@ -52,32 +52,31 @@ public class Game {
             int choice = in.nextInt();
             if(choice == 1){
                 System.out.println("Vous avez attaqué le monstre!");
-                int damage = this.player.getAttack() - monster.getDefense();
-                if(damage < 0){
-                    damage = 0;
+                int degat = this.joueur.getForce() - adversaire.getResistance();
+                if(degat < 0){
+                    degat = 0;
                 }
-                monster.takeDamage(damage);
-                if(monster.getHealth() <= 0){
+                adversaire.subirDegat(degat);
+                if(adversaire.getSante() <= 0){
                     System.out.println("Vous avez vaincu le monstre!");
-                    this.player.gainExperience(10);
-                    this.player.gainGold(monster.getGold());
-                    this.monsters.remove(monster);
+                    this.joueur.gainExperience(10);
+                    this.adversaires.remove(adversaire);
                     break;
                 } else {
                     System.out.println("Le monstre est toujours en vie!");
-                    damage = monster.getAttack() - this.player.getDefense();
-                    if(damage < 0){
-                        damage = 0;
+                    degat = adversaire.getForce() - this.joueur.getResistance();
+                    if(degat < 0){
+                        degat = 0;
                     }
-                    this.player.takeDamage(damage);
-                    if(this.player.getHealth() <= 0){
+                    this.joueur.subirDegat(degat);
+                    if(this.joueur.getForce() <= 0){
                         System.out.println("Vous êtes mort!");
                         System.out.println("Votre aventure est terminée!");
                         System.exit(0);
                     }
                 }
             } else if(choice == 2){
-                System.out.println("Vous avez fui le monstre!");
+                System.out.println("Vous avez fait fuire le monstre!");
                 break;
             } else {
                 System.out.println("Veuillez entrer une option valide!");
@@ -86,12 +85,12 @@ public class Game {
     }
 
     public void printStatus(){
-        System.out.println("Nom: " + this.player.getName());
-        System.out.println("Santé: " + this.player.getHealth());
-        System.out.println("Attaque: " + this.player.getAttack());
-        System.out.println("Défense: " + this.player.getDefense());
-        System.out.println("Or: " + this.player.getGold());
-        System.out.println("Expérience: " + this.player.getExperience());
-        System.out.println("Niveau: " + this.player.getLevel());
+        System.out.println("Nom: " + this.joueur.getNom());
+        System.out.println("Santé: " + this.joueur.getSante());
+        System.out.println("Attaque: " + this.joueur.getForce());
+        System.out.println("Défense: " + this.joueur.getResistance());
+        System.out.println("Or: " + this.joueur.getOr());
+        System.out.println("Expérience: " + this.joueur.getExperience());
+        System.out.println("Niveau: " + this.joueur.getNiveau());
     }
 }
