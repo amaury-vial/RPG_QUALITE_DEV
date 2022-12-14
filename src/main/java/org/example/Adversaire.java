@@ -1,5 +1,7 @@
 package org.example;
 
+import personnage.Personnage;
+
 public class Adversaire extends Personnage {
 
 

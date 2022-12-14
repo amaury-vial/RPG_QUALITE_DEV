@@ -1,5 +1,7 @@
 package org.example;
 
+import personnage.Personnage;
+
 public  class Joueur extends Personnage {
 
     int pointsAAttribuer = 20;

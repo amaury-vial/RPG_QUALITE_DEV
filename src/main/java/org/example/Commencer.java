@@ -1,5 +1,7 @@
 package org.example;
 
+import personnage.Guerrier;
+
 import java.util.Scanner;
 
 public class Commencer {
@@ -86,13 +88,13 @@ public class Commencer {
         }
 
         System.out.println("Voici tes stats");
-        System.out.println("Agilité " +Perso.agilite);
-        System.out.println("Force " +Perso.force);
-        System.out.println("Chance " +Perso.chance);
+        System.out.println("Agilité " +Perso.getNom());
+        System.out.println("Force " +Perso.getForce());
+        System.out.println("Chance " +Perso.getChance());
         System.out.println("");
         System.out.println("Félicitation tu as crée ton personnage");
         System.out.println("Place au jeu !");
-        System.out.println(Perso.nom);
+        System.out.println(Perso.getNom());
 
     }
 
