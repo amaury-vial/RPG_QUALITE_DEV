@@ -1,6 +1,9 @@
 package org.example;
 
 import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -29,13 +32,17 @@ public class Main {
 
         }
 
-        Game game = new Game(Perso);
-        Adversaire mechant1 = new Adversaire("Sephiroth");
-        Adversaire mechant2 = new Adversaire("Thanatos");
-        Adversaire mechant3 = new Adversaire("Vader");
-        Adversaire mechant4 = new Adversaire("Sauron");
-        Adversaire mechant5 = new Adversaire("Adam Smasher");
-        game.ajouterMonstre( mechant1 , mechant2 ,  mechant3 ,  mechant4 , mechant5 );
+
+        Adversaire mechant1 = new Adversaire("Sephiroth" ,  15, 2);
+        Adversaire mechant2 = new Adversaire("Thanatos" , 30 , 0);
+        Adversaire mechant3 = new Adversaire("Vader" , 0 , 5);
+        Adversaire mechant4 = new Adversaire("Sauron" , 14 , 6);
+        Adversaire mechant5 = new Adversaire("Adam Smasher" , 20 , 20);
+         ArrayList<Adversaire> test =new ArrayList<Adversaire>();
+         test.add(mechant1);
+            Game game = new Game(Perso);
+            game.ajouterMonstre(test, mechant1 , mechant2 ,  mechant3 ,  mechant4 , mechant5 );
+            game.trierMechant(test);
 
 
         game.start();

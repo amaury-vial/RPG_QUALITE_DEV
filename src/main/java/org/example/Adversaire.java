@@ -3,9 +3,10 @@ package org.example;
 //Classe pour gérer un adversaire
 public class Adversaire extends Personnage{
 
-    public Adversaire(String nom ) {
+    public Adversaire(String nom , int force , int resistance ) {
         super(nom );
-        setForce(10);
+        this.setForce(force);
+        this.setResistance(resistance);
 
     }
 

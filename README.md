@@ -8,7 +8,7 @@
 
 Le jeu se déroule dans un monde magique et médiéval, peuplé de nombreuses créatures et objet. Le joueur peut choisir sa **classe de départ** et s'aventure dans ce monde fantastique.
 
-Le joueur peut **explorer**, entrer dans des **batailles**, et même trouver des **denrées**.
+Le joueur peut **explorer, entrer dans des **batailles**, et même trouver des **denrées**.
 
 Le joueur peut également développer ses caractéristiques en son équipement
 
@@ -16,4 +16,4 @@ Le joueur peut également développer ses caractéristiques en son équipement
 
 `Bonne Chance !!!`
 
-![IMG_RPG](IMG_RPG.png)
+![IMG_RPG](C:\Users\amaur\Desktop\RPG_QUALITE_DEV\IMG_RPG.png)

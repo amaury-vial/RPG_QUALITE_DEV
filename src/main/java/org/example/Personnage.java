@@ -5,15 +5,15 @@ package org.example;
 
 
     private int sante;
-    private int force;
+    private int force ;
     private int resistance;
 
 
-    public Personnage(String nom ) {
+    public Personnage(String nom  ) {
         this.nom = nom;
         this.sante = 100;
 
-        this.setForce(50);
+
     }
 
 
@@ -28,6 +28,7 @@ package org.example;
     }
 
     public int getForce() {
+
         return force;
     }
 
@@ -54,5 +55,7 @@ package org.example;
      public void subirDegat(int degatRecu) {
         this.sante -= degatRecu;
      }
+
+
 
 }

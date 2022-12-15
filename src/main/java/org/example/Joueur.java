@@ -8,12 +8,42 @@ public class Joueur extends  Personnage {
     private int niveau;
     private int experience;
 
-    public Joueur(String nom) {
-        super(nom   );
+    private int nbPetitePotion;
+    private int nbMoyennePotion;
+    private int nbGrandePotion;
+
+
+    public void setNbPetitePotion(int nbPetitePotion) {
+        this.nbPetitePotion = nbPetitePotion;
+    }
+
+    public void setNbMoyennePotion(int nbMoyennePotion) {
+        this.nbMoyennePotion = nbMoyennePotion;
+    }
+
+    public void setNbGrandePotion(int nbGrandePotion) {
+        this.nbGrandePotion = nbGrandePotion;
+    }
+
+    public int getNbPetitePotion() {
+        return nbPetitePotion;
+    }
+
+    public int getNbMoyennePotion() {
+        return nbMoyennePotion;
+    }
+
+    public int getNbGrandePotion() {
+        return nbGrandePotion;
+    }
+
+    public Joueur(String nom ) {
+        super(nom );
 
         this.or = 0;
         this.niveau = 1;
         this.experience = 0;
+
     }
 
 
@@ -47,7 +77,7 @@ public class Joueur extends  Personnage {
 
 
     public void gainExperience(int nbNiveau){
-       experience += nbNiveau;
+        experience += nbNiveau;
         //si son expèrience atteint 100//
         if(this.experience >= 100){
             // il augmente de niveau  //
@@ -60,6 +90,16 @@ public class Joueur extends  Personnage {
         }
         else
             System.out.println("Ne perd pas espoir. Tu augmenteras bientot de niveau");
+    }
+
+    public void printStatus(){
+        System.out.println("Nom: " +getNom());
+        System.out.println("Santé: " + getSante());
+        System.out.println("Attaque: " + getForce());
+        System.out.println("Défense: " + getResistance());
+        System.out.println("Or: " + getOr());
+        System.out.println("Expérience: " + getExperience());
+        System.out.println("Niveau: " + getNiveau());
     }
 
 }
