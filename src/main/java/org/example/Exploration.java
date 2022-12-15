@@ -31,6 +31,28 @@ public class Exploration {
                 Scanner in = new Scanner(System.in);
                 int choice = in.nextInt();
                 if (choice == 1) {
+                    System.out.println("1. Attaque classique");
+                    System.out.println("2. Attaque spéciale");
+                    Scanner sc = new Scanner(System.in);
+                    int choix_attaque = sc.nextInt();
+                    if(choix_attaque == 1){
+                        System.out.println("Vous avez attaqué le monstre!");
+                        int degat = joueur.getForce() - adversaire.getResistance();
+                        if (degat < 0) {
+                            degat = 0;
+                        }
+                    } else if (choix_attaque == 2) {
+                        joueur.attaquespe();
+                        System.out.println("Vous avez attaqué le monstre avec une attaque spéciale");
+                        int degat = joueur.getForce() - adversaire.getResistance();
+                        if (degat < 0) {
+                            degat = 0;
+                        }
+                    }
+                    else {
+                        System.out.println("Veuillez entrer une option valide!");
+                    }
+
                     System.out.println("Vous avez attaqué le monstre!");
                     int degat = joueur.getForce() - adversaire.getResistance();
                     if (degat < 0) {

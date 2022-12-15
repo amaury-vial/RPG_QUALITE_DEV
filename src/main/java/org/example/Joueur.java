@@ -1,9 +1,7 @@
 package org.example;
 
 //Classe pour initialiser le joueur
-public class Joueur extends  Personnage {
-
-
+abstract public class Joueur extends  Personnage {
     private int or ;
     private int niveau;
     private int experience;
@@ -101,5 +99,10 @@ public class Joueur extends  Personnage {
         System.out.println("Expérience: " + getExperience());
         System.out.println("Niveau: " + getNiveau());
     }
+
+    abstract public void attaquespe();
+
+
+
 
 }

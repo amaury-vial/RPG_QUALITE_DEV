@@ -2,8 +2,6 @@ package org.example;
 
  public class Personnage {
     private String nom;
-
-
     private int sante;
     private int force ;
     private int resistance;
@@ -15,9 +13,6 @@ package org.example;
 
 
     }
-
-
-
 
      public String getNom() {
         return nom;
@@ -55,7 +50,5 @@ package org.example;
      public void subirDegat(int degatRecu) {
         this.sante -= degatRecu;
      }
-
-
 
 }

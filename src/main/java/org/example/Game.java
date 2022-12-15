@@ -43,8 +43,6 @@ public class Game {
     }
 
 
-
-
     public void start(){
         System.out.println("Bienvenue dans L'Âme des Ténèbres "+joueur.getNom());
         while(true){

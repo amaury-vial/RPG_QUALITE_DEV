@@ -6,4 +6,10 @@ public class Archers extends Joueur {
         this.setForce(5);
         this.setResistance(35);
     }
+
+    @Override
+    public void attaquespe() {
+        System.out.println("Attaque spéciale !!");
+        this.setResistance(getResistance()*2);
+    }
 }

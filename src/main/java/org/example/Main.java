@@ -5,6 +5,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
+/**
+ * Description
+ *
+ * @author Ramdani DJibril, Sarti Alex, Vial Amaury
+ *
+ */
+
 
 public class Main {
     public static void main(String[] args){
