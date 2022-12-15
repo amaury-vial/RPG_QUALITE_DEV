@@ -2,26 +2,39 @@ package org.example;
 
 //Classe pour initialiser le joueur
 public class Joueur extends  Personnage {
-    public Joueur(String nom) {
-        super(nom);
-    }
+
 
     private int or ;
     private int niveau;
     private int experience;
 
-    public Joueur(String nom, int or, int niveau, int experience) {
-        super(nom);
+    public Joueur(String nom) {
+        super(nom   );
+
         this.or = 0;
         this.niveau = 1;
         this.experience = 0;
     }
 
+
+
+
+
+    public void setOr(int or) {
+        this.or = or;
+    }
+
+    public void setNiveau(int niveau) {
+        this.niveau = niveau;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
     public int getOr() {
         return or;
     }
-
-
 
     public int getNiveau() {
         return niveau;
@@ -48,7 +61,5 @@ public class Joueur extends  Personnage {
         else
             System.out.println("Ne perd pas espoir. Tu augmenteras bientot de niveau");
     }
-
-
 
 }

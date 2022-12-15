@@ -9,11 +9,10 @@ package org.example;
     private int resistance;
 
 
-    public Personnage(String nom) {
+    public Personnage(String nom ) {
         this.nom = nom;
         this.sante = 100;
-        this.force = 10;
-        this.resistance = 10;
+
         this.setForce(50);
     }
 

@@ -1,11 +1,11 @@
 package org.example;
 
-//Classe pour gérer un monstre
+//Classe pour gérer un adversaire
 public class Adversaire extends Personnage{
 
-    public Adversaire(String nom) {
-        super(nom);
-        this.setResistance(0);
+    public Adversaire(String nom ) {
+        super(nom );
+
     }
 
 
