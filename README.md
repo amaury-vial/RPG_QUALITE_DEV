@@ -16,4 +16,4 @@ Le joueur peut également développer ses caractéristiques en son équipement
 
 `Bonne Chance !!!`
 
-![IMG_RPG](C:\Users\amaur\Desktop\RPG_QUALITE_DEV\IMG_RPG.png)
+![IMG_RPG](IMG_RPG.png)
