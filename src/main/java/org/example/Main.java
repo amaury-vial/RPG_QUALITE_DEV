@@ -14,7 +14,7 @@ public class Main {
         char classe = sc.next().charAt(0);
         while (classe != 'G' && classe != 'A' )
         {
-            System.out.println("Veuillez choisir une classe proposée!");
+            System.out.println("Veuillez choisir une classe proposée ! A pour Archer et G pour guerrier ( Attention aux majuscules ! )");
             classe = sc.next().charAt(0);
         }
         switch (classe) {
