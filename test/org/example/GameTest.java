@@ -12,12 +12,7 @@ import static org.junit.Assert.*;
 
 public class GameTest {
     
-    @Test
-    public void test_Game() {
-        Joueur joueur = new Joueur("John");
-        Game game = new Game(joueur);
-        assertNotNull(game.getAdversaires());
-    }
+
 
 
 

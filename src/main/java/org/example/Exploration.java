@@ -42,7 +42,7 @@ public class Exploration {
                             degat = 0;
                         }
                     } else if (choix_attaque == 2) {
-                        joueur.attaquespe();
+                        joueur.attaqueSpe();
                         System.out.println("Vous avez attaqué le monstre avec une attaque spéciale");
                         int degat = joueur.getForce() - adversaire.getResistance();
                         if (degat < 0) {

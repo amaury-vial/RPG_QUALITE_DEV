@@ -9,11 +9,22 @@ import java.util.Scanner;
  * Description
  *
  * @author Ramdani DJibril, Sarti Alex, Vial Amaury
- *
+ * @version 1.0
  */
 
 
+/**
+ * Main est la classe principale qui permet de lancer le jeu.
+ * Elle permet à l'utilisateur de choisir le personnage et d'ajouter des monstres au jeu.
+ */
+
 public class Main {
+
+    /**
+     * Main est la méthode principale du jeu.
+     *
+     * @param args est un tableau de chaînes de caractères qui peut être passé en argument à la méthode main.
+     */
     public static void main(String[] args){
         Joueur Perso ;
         System.out.println("Salut jeune aventurier!");
@@ -38,7 +49,6 @@ public class Main {
                 break;
 
         }
-
 
         Adversaire mechant1 = new Adversaire("Sephiroth" ,  15, 2);
         Adversaire mechant2 = new Adversaire("Thanatos" , 30 , 0);
