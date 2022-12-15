@@ -10,11 +10,13 @@ public class Main {
         System.out.println("Quel est ton nom ?");
         Scanner sc = new Scanner(System.in);
         String prenom = sc.nextLine();
-        System.out.println("Quelle classe veux tu ?");
+        System.out.println("Quelle classe veux tu ? " + prenom);
+        System.out.println(" 'A' pour l'archer et 'G' pour le Guerrier (attention aux majuscules)");
+
         char classe = sc.next().charAt(0);
         while (classe != 'G' && classe != 'A' )
         {
-            System.out.println("Veuillez choisir une classe proposée ! A pour Archer et G pour guerrier ( Attention aux majuscules ! )");
+            System.out.println("Veuillez choisir une classe proposée! ");
             classe = sc.next().charAt(0);
         }
         switch (classe) {

@@ -38,7 +38,8 @@ public class Game {
             System.out.println("Veuillez choisir une action:");
             System.out.println("1. Explorer");
             System.out.println("2. Afficher le status du joueur");
-            System.out.println("3. Quitter");
+            System.out.println("3. Boutique ");
+            System.out.println("4. Quitter");
             Scanner in = new Scanner(System.in);
             int choice = in.nextInt();
             if(choice == 1){
@@ -46,8 +47,13 @@ public class Game {
             } else if(choice == 2){
                 printStatus();
             } else if(choice == 3){
+               boutique();
+            }
+            else if(choice==4)
+            {
                 break;
-            } else {
+            }
+            else {
                 System.out.println("Veuillez entrer une option valide!");
             }
         }
@@ -82,14 +88,17 @@ public class Game {
                         degat = 0;
                     }
                     adversaire.subirDegat(degat);
+                    joueur.subirDegat(degat);
                     if (adversaire.getSante() <= 0) {
                         System.out.println("Vous avez vaincu le monstre!");
-                        this.joueur.gainExperience(10);
-                        this.adversaires.remove(adversaire);
+                        joueur.gainExperience(10);
+                        joueur.setOr(joueur.getOr()+20);
+
                         break;
                     } else {
                         System.out.println("Le monstre est toujours en vie!");
                         System.out.println("Votre adversaire a " + adversaire.getSante() + " PV");
+                        System.out.println("Vous avez "+joueur.getSante());
                         degat = adversaire.getForce() - this.joueur.getResistance();
                         if (degat < 0) {
                             degat = 0;
@@ -125,6 +134,118 @@ public class Game {
 
                 System.out.println("Tu n'as rien trouvé ici");
 
+
+    }
+
+    public void boutique ()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Que voulez vous acheter ?");
+        System.out.println("1 pour armes");
+        System.out.println("2 pour armure");
+        System.out.println("3 pour potion");
+        int choix = sc.nextInt();
+        if (choix ==1)
+        {
+            System.out.println("Quels types d'armes veux tu ?");
+            System.out.println("1 :  épée en bois ( 10 or ) ");
+            System.out.println("2 :  épée en fer (50 or ) ");
+            System.out.println("3 :  épée en or ( 50 or ) ");
+            int choixArmes = sc.nextInt();
+            switch (choixArmes) {
+                case 1:
+                    if (joueur.getOr() >=10)
+                    {
+                        System.out.println("Vous avez désormais une épée en bois");
+                        joueur.setOr(joueur.getOr() - 10);
+                        joueur.setForce(joueur.getForce()+10);
+                        break;
+
+                    }
+                    else
+                        System.out.println("Vous n'avez pas assez d'or ");
+                        break;
+                case 2:
+                    if (joueur.getOr() >=50)
+                    {
+                        System.out.println("Vous avez désormais une épée en argent");
+                        joueur.setOr(joueur.getOr() - 50);
+                        joueur.setForce(joueur.getForce()+20);
+                        break;
+
+
+                    }
+                    else {
+                        System.out.println("Vous n'avez pas assez d'or ");
+                        break;
+
+                    }
+                case 3:
+
+                    if (joueur.getOr() >=200)
+                    {
+                        System.out.println("Vous avez désormais une épée en or");
+                        joueur.setOr(joueur.getOr() - 200);
+                        joueur.setForce(joueur.getForce()+50);
+                        break;
+
+                    }
+                    else
+                        System.out.println("Vous n'avez pas assez d'or ");
+                    break;
+
+            }
+
+        }
+        else if (choix ==2)
+        {
+            System.out.println("Quels types d'armures veux tu ?");
+            System.out.println("1 :  armure en bois");
+            System.out.println("2 :  armure en fer");
+            System.out.println("3 :  armure en or");
+            int choixArmure = sc.nextInt();
+            switch (choixArmure) {
+                case 1:
+                    if (joueur.getOr() >=10)
+                    {
+                        System.out.println("Vous avez désormais une armure en bois");
+                        joueur.setOr(joueur.getOr() - 10);
+                        joueur.setForce(joueur.getResistance()+10);
+                        break;
+
+                    }
+                    else
+                        System.out.println("Vous n'avez pas assez d'or ");
+                    break;
+                case 2:
+                    if (joueur.getOr() >=50)
+                    {
+                        System.out.println("Vous avez désormais une amure en argent");
+                        joueur.setOr(joueur.getOr() - 50);
+                        joueur.setForce(joueur.getResistance()+20);
+                        break;
+
+
+                    }
+                    else
+                        System.out.println("Vous n'avez pas assez d'or ");
+                    break;
+                case 3:
+                    if (joueur.getOr() >=200)
+                    {
+                        System.out.println("Vous avez désormais une armure en or");
+                        joueur.setOr(joueur.getOr() - 200);
+                        joueur.setForce(joueur.getResistance()+50);
+                        break;
+
+                    }
+                    else
+                        System.out.println("Vous n'avez pas assez d'or ");
+                    break;
+                default:
+                    System.out.println("Veuimmez mettre une saisie correcte");
+            }
+        }
 
     }
 

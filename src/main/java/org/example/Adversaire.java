@@ -5,6 +5,7 @@ public class Adversaire extends Personnage{
 
     public Adversaire(String nom ) {
         super(nom );
+        setForce(10);
 
     }
 
