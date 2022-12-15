@@ -5,6 +5,5 @@ public class Guerrier extends Joueur{
         super(nom);
         this.setForce(30);
         this.setResistance(10);
-
     }
 }
