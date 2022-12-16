@@ -75,7 +75,7 @@ public class Game {
      * La méthode start permet de lancer le jeu.
      */
 
-    public void start(){
+    public void start(List<Adversaire> adversaires){
         System.out.println("Bienvenue dans L'Âme des Ténèbres "+joueur.getNom());
         while(true){
             System.out.println("Veuillez choisir une action:");

@@ -62,7 +62,7 @@ public class Main {
             game.trierMechant(test);
 
 
-        game.start();
+        game.start(test);
     }
 
 

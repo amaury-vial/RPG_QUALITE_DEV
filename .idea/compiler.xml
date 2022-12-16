@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="RPG_QUALITE_DEV-main" />
         <module name="Projet" />
+        <module name="RPG_QUALITE_DEV" />
       </profile>
     </annotationProcessing>
   </component>
